@@ -38,8 +38,8 @@ justify-content: space-between;
   outline: none;
 }
 .student-list th{
-  color: rgb(12, 11, 11);
-  background-color: yellow;
+  color: #eee;
+  background-color: #424242;
   padding: 16px;
   font-size: 21px;
   text-transform:capitalize;
@@ -48,6 +48,7 @@ justify-content: space-between;
 }
 .student-list th:hover{
   background-color: #fff;
+  color: black;
 }
 .student-list td{
   padding: 03px;
@@ -56,10 +57,10 @@ justify-content: space-between;
   font-size: 19px;
 }
 .student-list tr:hover{
-  background-color: rgb(7, 209, 7);
+  background-color: #C4CDC1;
 }
 .btns button{
-  border: blue 3px solid;
+  border: blue 2px solid;
   height: 30px;
   font-size: 18px;
   color: blue;
@@ -68,7 +69,8 @@ justify-content: space-between;
   margin: 0 10px;
 }
 .btns button:hover{
-  background-color: blue;
+  background-color: #6D9197;
+  border: none;
   color: rgb(255, 253, 253);
 }
 .modal {
@@ -198,10 +200,10 @@ justify-content: space-between;
   top: 0;
   left: 50;
   padding-right: 20px;
-  margin-top: 25px;
-  width: 330px;
+  margin-top: 05px;
+  width: 300px;
   background-color: #fff;
-  padding:20px; 
+  padding:10px; 
   border-radius: 10px;
 }
 .previews p{
@@ -212,7 +214,7 @@ justify-content: space-between;
   text-align: center;
 }
 .previews p span{
-  padding: 30px;
+  padding: 05px;
   color: black;
   font-weight: bold;
 }
@@ -243,13 +245,13 @@ justify-content: space-between;
 }
 
 .previews img{
-  margin:20px 30%;
-  width: 120px;
-  height: 120px;
+  margin:20px 35% 0;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
 }
 .top{
-  background-color: rgba(6, 17, 114, 0.575);
+  background-color: #0c2333;
   display: flex;
   justify-content: space-around;
   padding: 40px 0;
@@ -275,12 +277,12 @@ width: 300px;
 }
 .top button:hover{
   color: #eee;
-  background-color: rgb(0, 0, 116);
+  background-color: #91BBE5;
 }
 .fornt-aswomew{
   display:flex; 
   margin:auto 60px;
-  padding: 25px 0;
+  padding: 5px 0;
   width: 240px
 }
 .fornt-aswomew i{

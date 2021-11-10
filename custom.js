@@ -15,9 +15,8 @@ const studentApp = {
         DOB: "1995/11/11",
         Phone: "03120000000",
         gender:"Male",
-        gmail: "irfan@gmail.com",
         about:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus fugiat atque quasi esse sapiente aut. Cumque dolorum, architecto laboriosam aut",
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus fugiat atque quasi esse",
       },
       
       {
@@ -27,9 +26,8 @@ const studentApp = {
         DOB: "1997/10/10",
         Phone: "03120002222",
         gender:"Male",
-        gmail: "haider@gmail.com",
         about:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus fugiat atque quasi esse sapiente aut. Cumque dolorum, architecto laboriosam aut",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus fugiat atque quasi esse",
       },
       {id: 3,
       firstName: "Ambreen",
@@ -37,9 +35,8 @@ const studentApp = {
       DOB: "1991/05/01",
       Phone: "03129990000",
       gender:"Female",
-      gmail: "ambreen@gmail.com",
       about:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus fugiat atque quasi esse sapiente aut. Cumque dolorum, architecto laboriosam aut",
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus fugiat atque quasi esse",
     },
     {id: 4,
     firstName: "Mavish",
@@ -47,19 +44,17 @@ const studentApp = {
     DOB: "1993/05/06",
     Phone: "03126660000",
     gender:"Female",
-    gmail: "mavish@gmail.com",
     about:
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus fugiat atque quasi esse sapiente aut. Cumque dolorum, architecto laboriosam aut",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus fugiat atque quasi esse",
   },
   {id: 5,
-    firstName: "Koi B larki",
+    firstName: "Sara",
     class: "13th",
     DOB: "1999/05/01",
     Phone: "03129990022",
     gender:"Female",
-    gmail: "koi@gmail.com",
     about:
-     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus fugiat atque quasi esse sapiente aut. Cumque dolorum, architecto laboriosam aut",
+     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus fugiat atque quasi esse",
   },
   {id: 6,
     firstName: "Khan",
@@ -67,9 +62,8 @@ const studentApp = {
     DOB: "2002/05/01",
     Phone: "Nill ",
     gender:"Male",
-    gmail: "khan@gmail.com",
     about:
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus fugiat atque quasi esse sapiente aut. Cumque dolorum, architecto laboriosam aut",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus fugiat atque quasi esse",
   },
     ],
     newStudent: {
@@ -187,13 +181,13 @@ const studentApp = {
     <div class="close" onclick="studentApp.closeModal()">&times</div>
     <h3>${student ? "Update" : "Add"} Student Form</h3>
       <form id="form" onkeyup="studentApp.handleChange(event)" onsubmit="studentApp.handleStudent(event)">
-      <input required class="input" value="${
+      <input class="input" value="${
         student ? student.firstName : ""
       }" name="firstName" placeholder="Enter name"/>
         <input class="input" value="${
           student ? student.class : ""
         }" name="class" placeholder="Enter class"/>
-        <input type="email" required class="input" value="${
+        <input class="input" value="${
           student ? student.gmail : ""
         }" name="gmail" placeholder="enter your gmail"/>
         <input class="input" value="${
@@ -285,18 +279,18 @@ const studentApp = {
           <img src= ${student.image} >
           <h3>${student.firstName}</h3>
           <div class="fornt-aswomew"><i class="fas fa-phone-alt"></i> <i class="far fa-comment-dots"></i> <i class="far fa-envelope"></i></div>
-          <p><span>About</span><br> ${student.about}</p>
+          <p><span>About</span> ${student.about}</p>
           <div class="about-details">
-          <p><span>ID:</span><br> ${student.id}</p>
-          <p><span>Gmail: </span><br> ${student.gmail}</p>
+          <p><span>ID:</span> ${student.id}</p>
+          <p><span>Gmail: </span> email:${student.firstName.toLowerCase()}@${student.id > 5 ? "g" : "hot"}mail.com</p>
           </div>
           <div class="about-details">
-          <p><span style="padding:">Class: </span><br> ${student.class}</p>
-          <p><span>Gender: </span><br> ${student.gender}</p>
+          <p><span style="padding:">Class: </span> ${student.class}</p>
+          <p><span>Gender: </span> ${student.gender}</p>
           </div>
           <div class="about-details">
-          <p><span>DOB: </span><br> ${student.DOB}</p>
-          <p><span>Phone: </span><br> ${student.Phone}</p>
+          <p><span>DOB: </span> ${student.DOB}</p>
+          <p><span>Phone: </span> ${student.Phone}</p>
           </div>
           </div>
       `;

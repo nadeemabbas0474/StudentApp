@@ -75,14 +75,12 @@ const studentApp = {
       about:"",
       gender: "",
     },
-    
   },
-
-  stopPropagation: (e) => {
+  stopPropagation: (e)=> {
     e.stopPropagation();
   },
 
-  handleChange: (e) => {
+  handleChange: (e)=>{
     const newStudent = {
       [e.target.name]: e.target.value,
     };
@@ -92,7 +90,7 @@ const studentApp = {
       ...newStudent,
     };
   },
-  handleStudent: (e) => {
+  handleStudent: (e)=> {
     e.preventDefault();
     let gndr = "";
     let gendes = document.getElementsByName('gdr');
@@ -140,27 +138,26 @@ const studentApp = {
     }
     console.log(studentApp.state.students)
   },
-
-  studentsSearch:()=>{
+  studentsSearch: ()=>{
     let nade = search.value.toLowerCase();
     let myAry = studentApp.state.students.filter((std) =>std.firstName.toLowerCase().includes(nade))
     studentApp.render(myAry)
-      },
-      showMales: ()=>{
-        console.log({gender}
-        )
-          // if (gender === "all"){
-          //   gender = "Male"
-          //   studentApp.render(studentApp.state.students)
-          // }else{
-            gender = "Male"
-            let nade = search.value.toLowerCase();
-            const newArray = studentApp.state.students.filter( item => item.gender === 'Male')
-            let myAry = newArray.filter((std) =>std.firstName.toLowerCase().includes(nade))
-            studentApp.render(myAry)
-          // }
-      },
-      showFemales: ()=>{
+  },
+  showMales: () =>{
+     console.log({gender}
+  )
+  // if (gender === "all"){
+   //   gender = "Male"
+  //   studentApp.render(studentApp.state.students)
+  // }else{
+    gender = "Male"
+    let nade = search.value.toLowerCase();
+    const newArray = studentApp.state.students.filter( item => item.gender === 'Male')
+    let myAry = newArray.filter((std) =>std.firstName.toLowerCase().includes(nade))
+    studentApp.render(myAry)
+  // }
+  },
+    showFemales:()=>{
         console.log([gender])
         if(gender === "all"){
           gender = "Female"
@@ -175,7 +172,7 @@ const studentApp = {
           studentApp.render(myAry);
         }
       },
-  handleStudentForm: (student) => {
+  handleStudentForm: (student) =>{
     const form = `
     <div class="modal-content" id="formModal"onclick="studentApp.stopPropagation(event)">
     <div class="close" onclick="studentApp.closeModal()">&times</div>
@@ -215,20 +212,20 @@ const studentApp = {
     modal.style.display = "flex";
     modal.innerHTML = form;
   },
-  confirmDelete: () => {
+
+  confirmDelete:()=>{
     if (studentApp.state.newStudent.id) {
-      const index = studentApp.state.students.findIndex(
-        (x) => x.id === studentApp.state.newStudent.id
-      );
+    const index = studentApp.state.students.findIndex(
+    (x) => x.id === studentApp.state.newStudent.id);
       if (index > -1) {
         studentApp.state.students.splice(index, 1);
       }
     }
     studentApp.closeModal();
     studentApp.render([...studentApp.state.students]);
-  },
+},
 
-  openDeleteModal: (id) => {
+openDeleteModal:(id) =>{
     const studentState = [...studentApp.state.students];
     const student = studentState.find((x) => x.id === id);
     if (student) {
@@ -247,17 +244,14 @@ const studentApp = {
       modal.innerHTML = deleteModal;
     }
   },
-
-  closeModal: () => {
+  closeModal:() =>{
     modal.style.display = "none";
     studentApp.state.newStudent = {
       firstName: "",
       class: "",
-
     };
   },
-
-  handleUpdate: (id) => {
+  handleUpdate:(id)=>{
     const studentState = [...studentApp.state.students];
     const student = studentState.find((x) => x.id === id);
     if (student) {
@@ -265,12 +259,10 @@ const studentApp = {
       studentApp.handleStudentForm(student);
     }
   },
-
-  handlePreview: (id) => {
+  handlePreview:(id)=>{
     console.log(id);
     const studentState = [...studentApp.state.students];
     const student = studentState.find((x) => x.id === id);
-
     if (student) {
       studentApp.state.newStudent = student;
       const previewContent = `
@@ -299,28 +291,26 @@ const studentApp = {
       // preview.innerHTML = previewContent;
     }
   },
-  asscend:() =>{
+  asscend:()=>{
     const{state, render} = studentApp
     const{students} = state
     students.sort((a, b) =>(a.firstName.toLowerCase() > b.firstName.toLowerCase()) ? 1 : -1 )
     render([...students]);
   },
-  idAsscend:() =>{
+  idAsscend:()=>{
     const{state,render} = studentApp
     const{students} = state
     students.sort((a, b) =>(a.id> b.id) ? 1 : -1 )
     render([...studentApp.state.students]);
   },
-  dobAsnd:() =>{
+  dobAsnd:()=>{
       const{state,render} = studentApp
       const{students} = state
     students.sort((a, b) =>(a.DOB < b.DOB) ? -1 : 1 )
     render([...students]);
   },
-  render: (array) => { 
-   
+  render:(array) =>{ 
     studentList.innerHTML = "";
-    
     let student = `<div class="head"><tr><th onclick="studentApp.asscend()">firstName</th><th onclick="studentApp.idAsscend()">ID</th><th>class</th><th onclick="studentApp.dobAsnd()">DOB</th><th>Phone</th><th>Action</th></tr></div>`
     array.forEach((item) => {
       student += `
@@ -342,11 +332,11 @@ const studentApp = {
       });
       studentList.innerHTML = student;
     },
-    init: () => {
-        const{state,render}=studentApp
-        const{students} = state
-        render(students);
-    },
+    init: () =>{
+      const{state,render}=studentApp
+      const{students} = state
+      render(students);
+  },
 };
-const{init} = studentApp
+const {init} = studentApp
 init();
